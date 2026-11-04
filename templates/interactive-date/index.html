@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Invitación interactiva personalizada">
+    <title>¿Aceptas la invitación?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-container">
+        <!-- Paso 1: Pregunta Principal -->
+        <section id="step-1" class="card active" aria-live="polite">
+            <div class="card-header">
+                <span class="badge">Especial para ti</span>
+                <h1 class="card-title">¿Te gustaría salir conmigo a una cita especial? 🌹</h1>
+            </div>
+            <div class="card-body buttons-wrapper">
+                <button id="btn-yes" class="btn btn-primary">¡Sí, me encantaría! ✨</button>
+                <button id="btn-no" class="btn btn-secondary">No, gracias</button>
+            </div>
+        </section>
+
+        <!-- Paso 2: Configuración de la Cita -->
+        <section id="step-2" class="card hidden" aria-live="polite">
+            <div class="card-header">
+                <h2 class="card-title">¡Sabía que dirías que sí! 🥰</h2>
+                <p class="card-subtitle">Elige el plan y la fecha ideal:</p>
+            </div>
+            <form id="date-form" class="card-body form-grid">
+                <div class="form-group">
+                    <label for="date-select">Fecha y Hora</label>
+                    <input type="datetime-local" id="date-select" required>
+                </div>
+                <div class="form-group">
+                    <label for="plan-select">Plan Preferido</label>
+                    <select id="plan-select" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="cena">Cena romántica 🍽️</option>
+                        <option value="cafe">Café y caminata ☕</option>
+                        <option value="cine">Cine y helado 🍦</option>
+                        <option value="sorpresa">Plan sorpresa 🎁</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirmar Cita 💖</button>
+            </form>
+        </section>
+
+        <!-- Paso 3: Confirmación Final -->
+        <section id="step-3" class="card hidden" aria-live="polite">
+            <div class="card-header">
+                <h2 class="card-title">¡Cita Agendada! 🎉</h2>
+                <p class="card-subtitle" id="summary-text"></p>
+            </div>
+            <div class="card-body">
+                <button id="btn-whatsapp" class="btn btn-whatsapp">Enviar respuesta por WhatsApp 📱</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="interactive.js"></script>
+</body>
+</html>
